@@ -1,0 +1,44 @@
+@import "compass_twitter_bootstrap";
+
+body {
+  background-image: url('../images/blue_bg.png');
+  color: #ccc;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  background-image: linear-gradient(#232D34,#1D252B);
+  padding: 20px 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 40px;
+}
+
+h1, h2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+h1 {
+  color: #0287B1;
+}
+
+h1:hover {
+  color: #00B8FF;
+}
+
+input[type="text"] {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 0 5px;
+  color: #C4D7E5;
+  font-weight: bold;
+
+  border-radius: 5px;
+  background: #AEC3D5;
+  background: rgba(174, 195, 213, 0.1);
+
+  border: none;
+  width: 40px;
+}

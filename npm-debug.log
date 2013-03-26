@@ -1,0 +1,365 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'update', '-g', 'yeoman' ]
+2 info using npm@1.2.14
+3 info using node@v0.10.0
+4 verbose node symlink /usr/bin/node
+5 verbose read json /usr/lib/package.json
+6 verbose read json /usr/lib/node_modules/npm/package.json
+7 verbose read json /usr/lib/node_modules/yeoman/package.json
+8 verbose cache add [ 'yeoman', '*' ]
+9 verbose cache add name="yeoman" spec="*" args=["yeoman","*"]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: '*',
+10 verbose parsed url   path: '*',
+10 verbose parsed url   href: '*' }
+11 verbose addNamed [ 'yeoman', '*' ]
+12 verbose addNamed [ null, '' ]
+13 verbose from cache /usr/lib/node_modules/npm/package.json
+14 verbose read json /usr/lib/node_modules/npm/node_modules/abbrev/package.json
+15 verbose read json /usr/lib/node_modules/npm/node_modules/ansi/package.json
+16 verbose read json /usr/lib/node_modules/npm/node_modules/archy/package.json
+17 verbose read json /usr/lib/node_modules/npm/node_modules/block-stream/package.json
+18 verbose read json /usr/lib/node_modules/npm/node_modules/chmodr/package.json
+19 verbose read json /usr/lib/node_modules/npm/node_modules/chownr/package.json
+20 verbose read json /usr/lib/node_modules/npm/node_modules/fstream/package.json
+21 verbose read json /usr/lib/node_modules/npm/node_modules/fstream-npm/package.json
+22 verbose read json /usr/lib/node_modules/npm/node_modules/glob/package.json
+23 verbose read json /usr/lib/node_modules/npm/node_modules/graceful-fs/package.json
+24 verbose read json /usr/lib/node_modules/npm/node_modules/inherits/package.json
+25 verbose read json /usr/lib/node_modules/npm/node_modules/ini/package.json
+26 verbose read json /usr/lib/node_modules/npm/node_modules/init-package-json/package.json
+27 verbose read json /usr/lib/node_modules/npm/node_modules/lockfile/package.json
+28 verbose read json /usr/lib/node_modules/npm/node_modules/lru-cache/package.json
+29 verbose read json /usr/lib/node_modules/npm/node_modules/minimatch/package.json
+30 verbose read json /usr/lib/node_modules/npm/node_modules/mkdirp/package.json
+31 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/package.json
+32 verbose read json /usr/lib/node_modules/npm/node_modules/nopt/package.json
+33 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/package.json
+34 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/package.json
+35 verbose read json /usr/lib/node_modules/npm/node_modules/npmlog/package.json
+36 verbose read json /usr/lib/node_modules/npm/node_modules/once/package.json
+37 verbose read json /usr/lib/node_modules/npm/node_modules/opener/package.json
+38 verbose read json /usr/lib/node_modules/npm/node_modules/osenv/package.json
+39 verbose read json /usr/lib/node_modules/npm/node_modules/read/package.json
+40 verbose read json /usr/lib/node_modules/npm/node_modules/read-installed/package.json
+41 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/package.json
+42 verbose read json /usr/lib/node_modules/npm/node_modules/request/package.json
+43 verbose read json /usr/lib/node_modules/npm/node_modules/retry/package.json
+44 verbose read json /usr/lib/node_modules/npm/node_modules/rimraf/package.json
+45 verbose read json /usr/lib/node_modules/npm/node_modules/semver/package.json
+46 verbose read json /usr/lib/node_modules/npm/node_modules/slide/package.json
+47 verbose read json /usr/lib/node_modules/npm/node_modules/tar/package.json
+48 verbose read json /usr/lib/node_modules/npm/node_modules/uid-number/package.json
+49 verbose read json /usr/lib/node_modules/npm/node_modules/which/package.json
+50 silly lockFile fd94f358-yeoman yeoman@*
+51 verbose lock yeoman@* /home/devnook/.npm/fd94f358-yeoman.lock
+52 silly addNameRange { name: 'yeoman', range: '', hasData: false }
+53 verbose url raw yeoman
+54 verbose url resolving [ 'https://registry.npmjs.org/', './yeoman' ]
+55 verbose url resolved https://registry.npmjs.org/yeoman
+56 info trying registry request attempt 1 at 16:51:02
+57 verbose etag "BJK1GNH72C6E91SLEXBH9SSEQ"
+58 http GET https://registry.npmjs.org/yeoman
+59 verbose from cache /usr/lib/node_modules/npm/node_modules/semver/package.json
+60 verbose from cache /usr/lib/node_modules/npm/node_modules/ini/package.json
+61 verbose from cache /usr/lib/node_modules/npm/node_modules/slide/package.json
+62 verbose from cache /usr/lib/node_modules/npm/node_modules/abbrev/package.json
+63 verbose from cache /usr/lib/node_modules/npm/node_modules/graceful-fs/package.json
+64 verbose from cache /usr/lib/node_modules/npm/node_modules/minimatch/package.json
+65 verbose from cache /usr/lib/node_modules/npm/node_modules/nopt/package.json
+66 verbose from cache /usr/lib/node_modules/npm/node_modules/rimraf/package.json
+67 verbose from cache /usr/lib/node_modules/npm/node_modules/request/package.json
+68 verbose from cache /usr/lib/node_modules/npm/node_modules/which/package.json
+69 verbose from cache /usr/lib/node_modules/npm/node_modules/tar/package.json
+70 verbose from cache /usr/lib/node_modules/npm/node_modules/fstream/package.json
+71 verbose from cache /usr/lib/node_modules/npm/node_modules/block-stream/package.json
+72 verbose from cache /usr/lib/node_modules/npm/node_modules/inherits/package.json
+73 verbose from cache /usr/lib/node_modules/npm/node_modules/mkdirp/package.json
+74 verbose from cache /usr/lib/node_modules/npm/node_modules/read/package.json
+75 verbose from cache /usr/lib/node_modules/npm/node_modules/lru-cache/package.json
+76 verbose from cache /usr/lib/node_modules/npm/node_modules/node-gyp/package.json
+77 verbose from cache /usr/lib/node_modules/npm/node_modules/fstream-npm/package.json
+78 verbose from cache /usr/lib/node_modules/npm/node_modules/uid-number/package.json
+79 verbose from cache /usr/lib/node_modules/npm/node_modules/archy/package.json
+80 verbose from cache /usr/lib/node_modules/npm/node_modules/chownr/package.json
+81 verbose from cache /usr/lib/node_modules/npm/node_modules/npmlog/package.json
+82 verbose from cache /usr/lib/node_modules/npm/node_modules/ansi/package.json
+83 verbose from cache /usr/lib/node_modules/npm/node_modules/npm-registry-client/package.json
+84 verbose from cache /usr/lib/node_modules/npm/node_modules/read-package-json/package.json
+85 verbose from cache /usr/lib/node_modules/npm/node_modules/read-installed/package.json
+86 verbose from cache /usr/lib/node_modules/npm/node_modules/glob/package.json
+87 verbose from cache /usr/lib/node_modules/npm/node_modules/init-package-json/package.json
+88 verbose from cache /usr/lib/node_modules/npm/node_modules/osenv/package.json
+89 verbose from cache /usr/lib/node_modules/npm/node_modules/lockfile/package.json
+90 verbose from cache /usr/lib/node_modules/npm/node_modules/retry/package.json
+91 verbose from cache /usr/lib/node_modules/npm/node_modules/once/package.json
+92 verbose from cache /usr/lib/node_modules/npm/node_modules/npmconf/package.json
+93 verbose from cache /usr/lib/node_modules/npm/node_modules/opener/package.json
+94 verbose from cache /usr/lib/node_modules/npm/node_modules/chmodr/package.json
+95 verbose read json /usr/lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json
+96 verbose read json /usr/lib/node_modules/npm/node_modules/nopt/node_modules/abbrev/package.json
+97 verbose read json /usr/lib/node_modules/npm/node_modules/rimraf/node_modules/graceful-fs/package.json
+98 verbose read json /usr/lib/node_modules/npm/node_modules/tar/node_modules/inherits/package.json
+99 verbose read json /usr/lib/node_modules/npm/node_modules/tar/node_modules/block-stream/package.json
+100 verbose read json /usr/lib/node_modules/npm/node_modules/tar/node_modules/fstream/package.json
+101 verbose read json /usr/lib/node_modules/npm/node_modules/fstream/node_modules/rimraf/package.json
+102 verbose read json /usr/lib/node_modules/npm/node_modules/fstream/node_modules/mkdirp/package.json
+103 verbose read json /usr/lib/node_modules/npm/node_modules/fstream/node_modules/graceful-fs/package.json
+104 verbose read json /usr/lib/node_modules/npm/node_modules/fstream/node_modules/inherits/package.json
+105 verbose read json /usr/lib/node_modules/npm/node_modules/block-stream/node_modules/inherits/package.json
+106 verbose read json /usr/lib/node_modules/npm/node_modules/read/node_modules/mute-stream/package.json
+107 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/package.json
+108 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/graceful-fs/package.json
+109 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/fstream/package.json
+110 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/minimatch/package.json
+111 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/mkdirp/package.json
+112 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/nopt/package.json
+113 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/npmlog/package.json
+114 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/osenv/package.json
+115 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/request/package.json
+116 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/rimraf/package.json
+117 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/semver/package.json
+118 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/tar/package.json
+119 verbose read json /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/which/package.json
+120 verbose read json /usr/lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json
+121 verbose read json /usr/lib/node_modules/npm/node_modules/npmlog/node_modules/ansi/package.json
+122 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/package.json
+123 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/node_modules/glob/package.json
+124 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/node_modules/lru-cache/package.json
+125 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/node_modules/semver/package.json
+126 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/node_modules/slide/package.json
+127 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/node_modules/npmlog/package.json
+128 verbose read json /usr/lib/node_modules/npm/node_modules/read-package-json/node_modules/graceful-fs/package.json
+129 verbose read json /usr/lib/node_modules/npm/node_modules/read-installed/node_modules/semver/package.json
+130 verbose read json /usr/lib/node_modules/npm/node_modules/read-installed/node_modules/slide/package.json
+131 verbose read json /usr/lib/node_modules/npm/node_modules/read-installed/node_modules/read-package-json/package.json
+132 verbose read json /usr/lib/node_modules/npm/node_modules/read-installed/node_modules/graceful-fs/package.json
+133 verbose read json /usr/lib/node_modules/npm/node_modules/read-installed/node_modules/npmlog/package.json
+134 verbose read json /usr/lib/node_modules/npm/node_modules/glob/node_modules/minimatch/package.json
+135 verbose read json /usr/lib/node_modules/npm/node_modules/glob/node_modules/graceful-fs/package.json
+136 verbose read json /usr/lib/node_modules/npm/node_modules/glob/node_modules/inherits/package.json
+137 verbose read json /usr/lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json
+138 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/config-chain/package.json
+139 verbose read json /usr/lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/package.json
+140 verbose from cache /usr/lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json
+141 verbose from cache /usr/lib/node_modules/npm/node_modules/read/node_modules/mute-stream/package.json
+142 verbose from cache /usr/lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json
+143 verbose read json /usr/lib/node_modules/npm/node_modules/fstream-npm/node_modules/inherits/package.json
+144 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/request/package.json
+145 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/graceful-fs/package.json
+146 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/semver/package.json
+147 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/slide/package.json
+148 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/chownr/package.json
+149 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/mkdirp/package.json
+150 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/rimraf/package.json
+151 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/retry/package.json
+152 verbose from cache /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/package.json
+153 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/npmlog/package.json
+154 verbose from cache /usr/lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json
+155 verbose read json /usr/lib/node_modules/npm/node_modules/init-package-json/node_modules/read/package.json
+156 verbose read json /usr/lib/node_modules/npm/node_modules/init-package-json/node_modules/read-package-json/package.json
+157 verbose read json /usr/lib/node_modules/npm/node_modules/init-package-json/node_modules/semver/package.json
+158 verbose from cache /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/config-chain/package.json
+159 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/inherits/package.json
+160 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/once/package.json
+161 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/mkdirp/package.json
+162 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/osenv/package.json
+163 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/nopt/package.json
+164 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/semver/package.json
+165 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/ini/package.json
+166 verbose read json /usr/lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/node_modules/minimatch/package.json
+167 verbose read json /usr/lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/node_modules/fstream/package.json
+168 verbose read json /usr/lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/node_modules/inherits/package.json
+169 verbose read json /usr/lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/node_modules/request/package.json
+170 verbose read json /usr/lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/node_modules/read/package.json
+171 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/config-chain/node_modules/proto-list/package.json
+172 verbose from cache /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/config-chain/node_modules/proto-list/package.json
+173 verbose read json /usr/lib/node_modules/npm/node_modules/npmconf/node_modules/config-chain/node_modules/ini/package.json
+174 http 304 https://registry.npmjs.org/yeoman
+175 silly registry.get cb [ 304,
+175 silly registry.get   { server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+175 silly registry.get     etag: '"BJK1GNH72C6E91SLEXBH9SSEQ"',
+175 silly registry.get     date: 'Sun, 24 Mar 2013 16:51:04 GMT',
+175 silly registry.get     'content-length': '0' } ]
+176 verbose etag yeoman from cache
+177 silly addNameRange number 2 { name: 'yeoman', range: '', hasData: true }
+178 silly addNameRange versions [ 'yeoman',
+178 silly addNameRange   [ '0.0.1',
+178 silly addNameRange     '0.7.0',
+178 silly addNameRange     '0.7.1',
+178 silly addNameRange     '0.7.2',
+178 silly addNameRange     '0.7.3',
+178 silly addNameRange     '0.9.0',
+178 silly addNameRange     '0.9.1',
+178 silly addNameRange     '0.9.2',
+178 silly addNameRange     '0.9.3',
+178 silly addNameRange     '0.9.4',
+178 silly addNameRange     '0.9.5',
+178 silly addNameRange     '0.9.6' ] ]
+179 verbose addNamed [ 'yeoman', '0.9.6' ]
+180 verbose addNamed [ '0.9.6', '0.9.6' ]
+181 silly lockFile 72540a0c-yeoman-0-9-6 yeoman@0.9.6
+182 verbose lock yeoman@0.9.6 /home/devnook/.npm/72540a0c-yeoman-0-9-6.lock
+183 verbose read json /home/devnook/.npm/yeoman/0.9.6/package/package.json
+184 silly lockFile 72540a0c-yeoman-0-9-6 yeoman@0.9.6
+185 silly lockFile 72540a0c-yeoman-0-9-6 yeoman@0.9.6
+186 silly lockFile fd94f358-yeoman yeoman@*
+187 silly lockFile fd94f358-yeoman yeoman@*
+188 info outdated updating [ [ '/usr/lib', 'yeoman', '0.9.4', '0.9.6' ] ]
+189 verbose install where,what [ '/usr/lib', [ 'yeoman@0.9.6' ] ]
+190 verbose read json /usr/lib/package.json
+191 verbose read json /usr/lib/package.json
+192 verbose cache add [ 'yeoman@0.9.6', null ]
+193 verbose cache add name=undefined spec="yeoman@0.9.6" args=["yeoman@0.9.6",null]
+194 verbose parsed url { protocol: null,
+194 verbose parsed url   slashes: null,
+194 verbose parsed url   auth: null,
+194 verbose parsed url   host: null,
+194 verbose parsed url   port: null,
+194 verbose parsed url   hostname: null,
+194 verbose parsed url   hash: null,
+194 verbose parsed url   search: null,
+194 verbose parsed url   query: null,
+194 verbose parsed url   pathname: 'yeoman@0.9.6',
+194 verbose parsed url   path: 'yeoman@0.9.6',
+194 verbose parsed url   href: 'yeoman@0.9.6' }
+195 verbose cache add name="yeoman" spec="0.9.6" args=["yeoman","0.9.6"]
+196 verbose parsed url { protocol: null,
+196 verbose parsed url   slashes: null,
+196 verbose parsed url   auth: null,
+196 verbose parsed url   host: null,
+196 verbose parsed url   port: null,
+196 verbose parsed url   hostname: null,
+196 verbose parsed url   hash: null,
+196 verbose parsed url   search: null,
+196 verbose parsed url   query: null,
+196 verbose parsed url   pathname: '0.9.6',
+196 verbose parsed url   path: '0.9.6',
+196 verbose parsed url   href: '0.9.6' }
+197 verbose addNamed [ 'yeoman', '0.9.6' ]
+198 verbose addNamed [ '0.9.6', '0.9.6' ]
+199 silly lockFile 72540a0c-yeoman-0-9-6 yeoman@0.9.6
+200 verbose lock yeoman@0.9.6 /home/devnook/.npm/72540a0c-yeoman-0-9-6.lock
+201 verbose url raw yeoman/0.9.6
+202 verbose url resolving [ 'https://registry.npmjs.org/', './yeoman/0.9.6' ]
+203 verbose url resolved https://registry.npmjs.org/yeoman/0.9.6
+204 info trying registry request attempt 1 at 16:51:04
+205 verbose etag "BJK1GNH72C6E91SLEXBH9SSEQ"
+206 http GET https://registry.npmjs.org/yeoman/0.9.6
+207 http 304 https://registry.npmjs.org/yeoman/0.9.6
+208 silly registry.get cb [ 304,
+208 silly registry.get   { server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+208 silly registry.get     etag: '"BJK1GNH72C6E91SLEXBH9SSEQ"',
+208 silly registry.get     date: 'Sun, 24 Mar 2013 16:51:07 GMT',
+208 silly registry.get     'content-length': '0' } ]
+209 verbose etag yeoman/0.9.6 from cache
+210 verbose from cache /home/devnook/.npm/yeoman/0.9.6/package/package.json
+211 silly lockFile 72540a0c-yeoman-0-9-6 yeoman@0.9.6
+212 silly lockFile 72540a0c-yeoman-0-9-6 yeoman@0.9.6
+213 silly resolved [ { name: 'yeoman',
+213 silly resolved     version: '0.9.6',
+213 silly resolved     description: 'The Yeoman CLI presents a command line interface for creating, building, maintaining, and shipping a project.',
+213 silly resolved     keywords:
+213 silly resolved      [ 'front-end',
+213 silly resolved        'development',
+213 silly resolved        'dev',
+213 silly resolved        'build',
+213 silly resolved        'web',
+213 silly resolved        'tool',
+213 silly resolved        'cli',
+213 silly resolved        'scaffold',
+213 silly resolved        'stack' ],
+213 silly resolved     homepage: 'http://yeoman.io',
+213 silly resolved     bugs: 'https://github.com/yeoman/yeoman/issues',
+213 silly resolved     author: { name: 'Chrome Developer Relations' },
+213 silly resolved     main: './yeoman',
+213 silly resolved     bin:
+213 silly resolved      { yeoman: './bin/yeoman',
+213 silly resolved        _yeomaninsight: './bin/yeomaninsight.py' },
+213 silly resolved     directories: { man: './man' },
+213 silly resolved     repository: { type: 'git', url: 'git://github.com/yeoman/yeoman.git' },
+213 silly resolved     scripts:
+213 silly resolved      { test: 'node node_modules/mocha/bin/mocha test/test-*.js',
+213 silly resolved        manpages: './scripts/docs-build' },
+213 silly resolved     dependencies:
+213 silly resolved      { grunt: 'http://github.com/cowboy/grunt/archive/0ba6d4b529.tar.gz',
+213 silly resolved        'yeoman-generators': 'http://github.com/yeoman/generators/archive/0.9.5.tar.gz',
+213 silly resolved        bower: '~0.3.0',
+213 silly resolved        open: '0.0.2',
+213 silly resolved        rimraf: '~2.0.1',
+213 silly resolved        mkdirp: '~0.3.1',
+213 silly resolved        requirejs: '~2.0.2',
+213 silly resolved        'clean-css': '~0.3.2',
+213 silly resolved        connect: '~2.2.1',
+213 silly resolved        request: '~2.9.200',
+213 silly resolved        'html-minifier': '~0.4.5',
+213 silly resolved        which: '~1.0.5',
+213 silly resolved        cheerio: '~0.9.2',
+213 silly resolved        fstream: '~0.1.18',
+213 silly resolved        'fstream-ignore': '0.0.5',
+213 silly resolved        tar: '~0.1.13',
+213 silly resolved        'coffee-script': '~1.3.3',
+213 silly resolved        'grunt-jasmine-task': '~0.2.2',
+213 silly resolved        'faye-websocket': '~0.4.2',
+213 silly resolved        shelljs: '~0.0.6',
+213 silly resolved        prompt: '~0.1.12',
+213 silly resolved        colors: '~0.6.0',
+213 silly resolved        'grunt-mocha': '~0.1.3',
+213 silly resolved        'es6-collections': '>=0.2.0',
+213 silly resolved        'grunt-contrib-coffee': '~0.3.1' },
+213 silly resolved     devDependencies: { mocha: '~1.4.0', ronn: '~0.3.8' },
+213 silly resolved     engines: { node: '>=0.8.0' },
+213 silly resolved     man:
+213 silly resolved      [ '/home/devnook/.npm/yeoman/0.9.6/package/man/bower.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/build.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/faq.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/folders.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/gruntfile.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/init.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/insight.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/serve.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/server.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/test.1',
+213 silly resolved        '/home/devnook/.npm/yeoman/0.9.6/package/man/yeoman.1' ],
+213 silly resolved     readme: '# Yeoman CLI\n\nThe Yeoman CLI presents a command-line interface for creating, building, maintaining, and shipping a project.\n\nFor more information, see the project [readme](https://github.com/yeoman/yeoman#welcome-friend).\n',
+213 silly resolved     readmeFilename: 'readme.md',
+213 silly resolved     _id: 'yeoman@0.9.6',
+213 silly resolved     _from: 'yeoman@0.9.6' } ]
+214 info install yeoman@0.9.6 into /usr/lib
+215 info installOne yeoman@0.9.6
+216 verbose from cache /home/devnook/.npm/yeoman/0.9.6/package/package.json
+217 info /usr/lib/node_modules/yeoman unbuild
+218 verbose from cache /usr/lib/node_modules/yeoman/package.json
+219 info preuninstall yeoman@0.9.4
+220 info uninstall yeoman@0.9.4
+221 verbose true,/usr/lib/node_modules,/usr/lib/node_modules unbuild yeoman@0.9.4
+222 verbose /usr/bin,[object Object] binRoot
+223 info /usr/lib/node_modules/yeoman unbuild
+224 verbose read json /usr/lib/node_modules/yeoman/package.json
+225 info preuninstall yeoman@0.9.4
+226 info uninstall yeoman@0.9.4
+227 verbose true,/usr/lib/node_modules,/usr/lib/node_modules unbuild yeoman@0.9.4
+228 verbose /usr/bin,[object Object] binRoot
+229 error error rolling back Error: EACCES, unlink '/usr/bin/yeoman'
+229 error error rolling back  yeoman@0.9.6 { [Error: EACCES, unlink '/usr/bin/yeoman'] errno: 3, code: 'EACCES', path: '/usr/bin/yeoman' }
+230 error Error: EACCES, unlink '/usr/bin/yeoman'
+230 error  { [Error: EACCES, unlink '/usr/bin/yeoman'] errno: 3, code: 'EACCES', path: '/usr/bin/yeoman' }
+231 error Please try running this command again as root/Administrator.
+232 error System Linux 3.5.0-25-generic
+233 error command "/usr/bin/node" "/usr/bin/npm" "update" "-g" "yeoman"
+234 error cwd /home/devnook/projects/okeanos-git/okeanos
+235 error node -v v0.10.0
+236 error npm -v 1.2.14
+237 error path /usr/bin/yeoman
+238 error code EACCES
+239 error errno 3
+240 error stack Error: EACCES, unlink '/usr/bin/yeoman'
+241 verbose exit [ 3, true ]
