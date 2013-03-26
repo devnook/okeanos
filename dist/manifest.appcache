@@ -1,0 +1,39 @@
+TypeError: 'null' is not an object (evaluating 'gl.createShader')
+
+  http://localhost:3501/:106 in getShader
+  http://localhost:3501/:128 in initShaders
+  http://localhost:3501/:492 in webGLStart
+  http://localhost:3501/:511 in onload
+CACHE MANIFEST
+
+# Time: Sun Mar 24 2013 16:51:12 GMT+0000 (GMT)
+# This manifest was created by confess.js, http://github.com/jamesgpearce/confess
+#
+# Retrieved URL: http://localhost:3501/
+# User-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#
+# Config:
+#  task: appcache
+#  userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#  wait: 0
+#  consolePrefix: #
+#  verbose: true
+#  appcache:
+#   urlsFromDocument: true
+#   urlsFromRequests: false
+#   cacheFilter: .*
+#   networkFilter: null
+#  url: http://localhost:3501
+#  configFile: /usr/lib/node_modules/yeoman/lib/support/confess.json
+
+CACHE:
+../WebGL/glMatrix-0.9.5.min.js
+../WebGL/webgl-utils.js
+http://localhost:3501/app/images/glyphicons-halflings-white.png?1362917685
+http://localhost:3501/app/images/glyphicons-halflings.png?1362917685
+http://localhost:3501/images/blue_bg.png
+scripts/vendor/modernizr.min.js
+styles/main.css
+
+NETWORK:
+*
