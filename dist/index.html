@@ -175,12 +175,17 @@
 
 	var glassTexture = [];
 
+							var z  = 1.0;
+	var x0 = 0.0;		var y0 = 0.0;		var z0 = -5.0;
+	var x1 = 0.0;		var y1 = -0.5;		var z1 = -30*0.05;
+	var dT = 70;
+
 	var ImgDir		= "./files/se03/";
 	var Test		= 1;
 	var imageLimit		= 20;
 	var tack		= 0;
 	var staticSlideAlpha	= 1.0;
-	var staticSlideVertex	= [2.5, 2.5, 0.0];
+	var staticSlideVertex	= [2.5, 2.5, -10-z0];
 
 	var lastTime		= 0;
 	var timeNow;
@@ -192,9 +197,8 @@
 	var sqrVertexIndexBuffer         = [];
 
 	var xRot 		= 0;	var xSpeed 	= 0;
-	var yRot 		= 0;	var ySpeed 	= -10;
+	var yRot 		= 0;	var ySpeed 	= -5;
 
-	var z = -10;
 
 	var currentlyPressedKeys = {};
 
@@ -398,7 +402,7 @@
 		mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
 
 		mat4.identity(mvMatrix);
-		mat4.translate(mvMatrix, [0.0, 0.0, z]);
+		mat4.translate(mvMatrix, [x0, y0, z0]);
 ///*
 		mat4.translate(mvMatrix, [staticSlideVertex[0], staticSlideVertex[1], staticSlideVertex[2]]);
 
@@ -463,11 +467,14 @@
 	//================
 		}
 
+		mat4.translate(mvMatrix, [0, 0, z]);
 		mat4.translate(mvMatrix, [-staticSlideVertex[0], -staticSlideVertex[1], -staticSlideVertex[2]]);
 //*/
+
 		mat4.rotate(mvMatrix, degToRad(xRot), [1, 0, 0]);
 		mat4.rotate(mvMatrix, degToRad(yRot), [0, 1, 0]);
 			
+		mat4.translate(mvMatrix, [x1, y1, z1]);
 
 		for(var i=0;i<imageLimit;i++)
 		{
@@ -630,12 +637,12 @@
         <h2>Position</h2>
         X: <input type="text" id="posX" value="0"    style="width:50"/>
         Y: <input type="text" id="posY" value="0"    style="width:50"/>
-        Z: <input type="text" id="posZ" value="-10"  style="width:50"/>
+        Z: <input type="text" id="posZ" value="0"  style="width:50"/>
 
         <h2>Rotation data</h2>
         Speed
         X: <input type="text" id="speedX" value="0"    style="width:50"/>
-        Y: <input type="text" id="speedY" value="-10"  style="width:50"/>
+        Y: <input type="text" id="speedY" value="-5"  style="width:50"/>
         <h3>Angle:</h3>
         Phi:   <b id="angFout"></b> <input type="text" id="angFin" value="0"    style="width:50"/>
         Theta: <b id="angTout"></b> <input type="text" id="angTin" value="0"    style="width:50"/>
