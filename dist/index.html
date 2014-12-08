@@ -178,7 +178,7 @@
 							var z  = 1.0;
 	var x0 = 0.0;		var y0 = 0.0;		var z0 = -5.0;
 	var x1 = 0.0;		var y1 = -0.5;		var z1 = -30*0.05;
-	var dT = 70;
+	var dT = 70;            var dTack = 1.0;
 
 	var ImgDir		= "./files/se05/";
 	var Test		= 1;
@@ -189,7 +189,6 @@
 
 	var lastTime		= 0;
 	var timeNow;
-	var dTack		= 1.0
 
 	var sqrVertexPositionBuffer      = [];
 	var sqrVertexNormalBuffer        = [];
@@ -292,7 +291,8 @@
 	}
 
 	function changeFrameRate(){
-		dT = parseFloat(document.getElementById('dT').value);
+		dT    = parseFloat(document.getElementById('dT').value);
+		dTack = parseFloat(document.getElementById('dTack').value);
 	}
 
 	function changeSpeed(){
@@ -409,15 +409,16 @@
 //		for(var i=0;i<26;i++)
 		{
 	//================ STATIC SLIDE
+		var tackRD = Math.floor(tack);
 
-		gl.bindBuffer(gl.ARRAY_BUFFER, sqrVertexPositionBuffer[tack]);
-		gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, sqrVertexPositionBuffer[tack].itemSize, gl.FLOAT, false, 0, 0);
-		gl.bindBuffer(gl.ARRAY_BUFFER, sqrVertexNormalBuffer[tack]);
-		gl.vertexAttribPointer(shaderProgram.vertexNormalAttribute, sqrVertexNormalBuffer[tack].itemSize, gl.FLOAT, false, 0, 0);
-		gl.bindBuffer(gl.ARRAY_BUFFER, sqrVertexTextureCoordBuffer[tack]);
-		gl.vertexAttribPointer(shaderProgram.textureCoordAttribute, sqrVertexTextureCoordBuffer[tack].itemSize, gl.FLOAT, false, 0, 0);
+		gl.bindBuffer(gl.ARRAY_BUFFER, sqrVertexPositionBuffer[tackRD]);
+		gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, sqrVertexPositionBuffer[tackRD].itemSize, gl.FLOAT, false, 0, 0);
+		gl.bindBuffer(gl.ARRAY_BUFFER, sqrVertexNormalBuffer[tackRD]);
+		gl.vertexAttribPointer(shaderProgram.vertexNormalAttribute, sqrVertexNormalBuffer[tackRD].itemSize, gl.FLOAT, false, 0, 0);
+		gl.bindBuffer(gl.ARRAY_BUFFER, sqrVertexTextureCoordBuffer[tackRD]);
+		gl.vertexAttribPointer(shaderProgram.textureCoordAttribute, sqrVertexTextureCoordBuffer[tackRD].itemSize, gl.FLOAT, false, 0, 0);
 		gl.activeTexture(gl.TEXTURE0);
-		gl.bindTexture(gl.TEXTURE_2D, glassTexture[tack]);
+		gl.bindTexture(gl.TEXTURE_2D, glassTexture[tackRD]);
 		gl.uniform1i(shaderProgram.samplerUniform, 0);
 
 
@@ -461,7 +462,7 @@
 		    );
 		}
 
-		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, sqrVertexIndexBuffer[tack]);
+		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, sqrVertexIndexBuffer[tackRD]);
 		setMatrixUniforms();
 		gl.drawElements(gl.TRIANGLES, sqrVertexIndexBuffer[tack].numItems, gl.UNSIGNED_SHORT, 0);
 	//================
@@ -632,7 +633,8 @@
       <div class="span5">
 
         <h2>FrameRate</h2>
-	Limit in ms: <input type="text" id="dT" value="70"    style="width:50"/>
+	Limit in ms: <input type="text" id="dT"    value="70"    style="width:50"/>
+	Tack value:  <input type="text" id="dTack" value="1"     style="width:50"/>
 
         <h2>Position</h2>
         X: <input type="text" id="posX" value="0"    style="width:50"/>
