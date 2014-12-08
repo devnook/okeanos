@@ -229,7 +229,10 @@
 		}
 		var ImgNo = i+1;
 		if (i<=9){ImgNo = '0'+ImgNo}
-			glassTexture[i].image.src = ImgDir+"im"+ImgNo+".jpg";
+			if ImgDir == "./files/se04/"
+				glassTexture[i].image.src = ImgDir+"MR0000"+ImgNo+".bmp";
+			else
+				glassTexture[i].image.src = ImgDir+"im"+ImgNo+".jpg";
 	}
 
 
@@ -651,8 +654,9 @@
 
         <h2>Slice plane:</h2>
         <form name="SliceForm">
-          <input type="radio" name="Slice" value="./files/se05/" checked onclick=changeImgDir()> Slice plane 1</input>
-          <input type="radio" name="Slice" value="./files/se03/"         onclick=changeImgDir()> Slice plane 2</input>
+          <input type="radio" name="Slice" value="./files/se05/" checked onclick=changeImgDir()> Foot left  1</input>
+          <input type="radio" name="Slice" value="./files/se03/"         onclick=changeImgDir()> Foot left  2</input>
+          <input type="radio" name="Slice" value="./files/se04/"         onclick=changeImgDir()> Foot right 1</input>
           <input type="radio" name="Slice" value="./files/07/"           onclick=changeImgDir()> Brain slice 1</input>
         </form>
 
