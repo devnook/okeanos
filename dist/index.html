@@ -580,6 +580,7 @@
 		tackRD	= Math.floor(tack);
 		if ((tackRD >= imageLimit-1.0)||(tackRD <= 0.0)) {
 			dTack = -1.0*dTack;
+			debugText("swapping tack due to value",tack.toPrecision(3));
 		}
 		debugText("tack",tack.toPrecision(3));
 	}
