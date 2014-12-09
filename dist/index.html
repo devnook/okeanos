@@ -175,10 +175,10 @@
 
 	var glassTexture = [];
 
-							var z  = 1.0;
+	var z  = 1.0;
 	var x0 = 0.0;		var y0 = 0.0;		var z0 = -5.0;
 	var x1 = 0.0;		var y1 = -0.5;		var z1 = -30*0.05;
-	var dT = 70;            var dTack = 1.0;
+	var dT = 70;		var dTack = 1.0;
 
 	var ImgDir		= "./files/se05/";
 	var Test		= 1;
@@ -467,7 +467,7 @@
 
 		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, sqrVertexIndexBuffer[tackRD]);
 		setMatrixUniforms();
-		gl.drawElements(gl.TRIANGLES, sqrVertexIndexBuffer[tack].numItems, gl.UNSIGNED_SHORT, 0);
+		gl.drawElements(gl.TRIANGLES, sqrVertexIndexBuffer[tackRD].numItems, gl.UNSIGNED_SHORT, 0);
 	//================
 		}
 
@@ -501,7 +501,7 @@
 
 		var blending = document.getElementById("blending").checked;
 		if (blending) {
-			if (i != tack) {
+			if (i != tackRD) {
 				gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
 				gl.enable(gl.BLEND);
 				gl.disable(gl.DEPTH_TEST);
@@ -577,7 +577,8 @@
 		if (document.getElementById('animation').value == "Turn OFF")
 			animate();
 		tack	+= dTack;
-		if ((tack >= imageLimit-1.0)||(tack <= 0.0)) {
+		tackRD	= Math.floor(tack);
+		if ((tackRD >= imageLimit-1.0)||(tackRD <= 0.0)) {
 			dTack = -1.0*dTack;
 		}
 		debugText("tack",tack);
