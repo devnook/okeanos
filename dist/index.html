@@ -17,17 +17,6 @@
     <script src="scripts/vendor/modernizr.min.js"></script>
 
 <canvas id="experimentalCanvas">I'm sorry your browser does not support the HTML5 canvas element.</canvas>
-<script>
-	var canvas = document.getElementById('experimentalCanvas');
-	var ctx = canvas.getContext('2d');
-	
-	ctx.fillStyle = "#333333"; 	// This determines the text colour, it can take a hex value or rgba value (e.g. rgba(255,0,0,0.5))
-	ctx.textAlign = "center";	// This determines the alignment of text, e.g. left, center, right
-	ctx.textBaseline = "middle";	// This determines the baseline of the text, e.g. top, middle, bottom
-	ctx.font = "12px monospace";	// This determines the size of the text and the font family used	
-	ctx.fillText("HTML5 Rocks!", canvas.width/2, canvas.height/2);
-// More code to go here!
-</script>	
 	
 <script type="text/javascript" src="WebGL/glMatrix-0.9.5.min.js"></script>
 <script type="text/javascript" src="WebGL/webgl-utils.js"></script>
@@ -86,6 +75,26 @@
 
     var gl;
 
+	function getPowerOfTwo(value, pow) {
+		var pow = pow || 1;
+		while(pow<value) {
+			pow *= 2;
+		}
+		return pow;
+	}	
+	var canvas = document.getElementById('experimentalCanvas');
+	var ctx = canvas.getContext('2d');
+	
+	ctx.fillStyle = "#333333"; 	// This determines the text colour, it can take a hex value or rgba value (e.g. rgba(255,0,0,0.5))
+	ctx.textAlign = "center";	// This determines the alignment of text, e.g. left, center, right
+	ctx.textBaseline = "middle";	// This determines the baseline of the text, e.g. top, middle, bottom
+	ctx.font = "12px monospace";	// This determines the size of the text and the font family used	
+	ctx.fillText("HTML5 Rocks!", canvas.width/2, canvas.height/2);
+	var canvas.width = getPowerOfTwo(ctx.measureText(textToWrite).width);
+	var canvas.height = getPowerOfTwo(2*textSize);// More code to go here!
+
+
+	
     function initGL(canvas) {
         try {
             gl = canvas.getContext("experimental-webgl");
@@ -234,6 +243,11 @@
 		for(var i=0;i<imageLimit;i++){initTexture(i);}
     }
 
+	function initExperimentalTexture() {
+		canvasTexture = gl.createTexture();
+		handleLoadedTexture(canvasTexture, document.getElementById('experimentalCanvas'));
+	}	
+	
 	function initTexture(i) {
 		glassTexture[i] = gl.createTexture();
 		glassTexture[i].image = new Image();
