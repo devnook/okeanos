@@ -240,7 +240,10 @@
             }
         }
 //        debugText("ImgDir",ImgDir);
-		for(var i=0;i<imageLimit;i++){initTexture(i);}
+		if document.SliceForm.Slice[2].checked==true
+			initExperimentalTexture();
+		else
+			for(var i=0;i<imageLimit;i++){initTexture(i);}
     }
 
 	function initExperimentalTexture() {
@@ -249,10 +252,6 @@
 	}	
 	
 	function initTexture(i) {
-		if document.SliceForm.Slice[2].checked==true
-			initExperimentalTexture();
-		else {
-
 			glassTexture[i] = gl.createTexture();
 			glassTexture[i].image = new Image();
 			glassTexture[i].image.onload = function () {
@@ -264,7 +263,6 @@
 	//				glassTexture[i].image.src = ImgDir+"MR0000"+ImgNo+".bmp";
 	//			else
 					glassTexture[i].image.src = ImgDir+"im"+ImgNo+".jpg";
-		}
 	}
 
 
