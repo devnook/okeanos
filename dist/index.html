@@ -12,12 +12,9 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/vendor/modernizr.min.js"></script>
 
-<canvas id="experimentalCanvas">I'm sorry your browser does not support the HTML5 canvas element.</canvas>
-	
 <script type="text/javascript" src="WebGL/glMatrix-0.9.5.min.js"></script>
 <script type="text/javascript" src="WebGL/webgl-utils.js"></script>
 
@@ -75,26 +72,6 @@
 
     var gl;
 
-	function getPowerOfTwo(value, pow) {
-		var pow = pow || 1;
-		while(pow<value) {
-			pow *= 2;
-		}
-		return pow;
-	}	
-	var canvas = document.getElementById('experimentalCanvas');
-	var ctx = canvas.getContext('2d');
-	
-	ctx.fillStyle = "#333333"; 	// This determines the text colour, it can take a hex value or rgba value (e.g. rgba(255,0,0,0.5))
-	ctx.textAlign = "center";	// This determines the alignment of text, e.g. left, center, right
-	ctx.textBaseline = "middle";	// This determines the baseline of the text, e.g. top, middle, bottom
-	ctx.font = "12px monospace";	// This determines the size of the text and the font family used	
-	ctx.fillText("HTML5 Rocks!", canvas.width/2, canvas.height/2);
-	var canvas.width = getPowerOfTwo(ctx.measureText(textToWrite).width);
-	var canvas.height = getPowerOfTwo(2*textSize);// More code to go here!
-
-
-	
     function initGL(canvas) {
         try {
             gl = canvas.getContext("experimental-webgl");
@@ -194,17 +171,17 @@
         gl.bindTexture(gl.TEXTURE_2D, null);
     }
 
-
+	
 	var glassTexture = [];
 
 	var z  = 1.0;
 	var x0 = 0.0;		var y0 = 0.0;		var z0 = -5.0;
 	var x1 = 0.0;		var y1 = -0.5;		var z1 = -30*0.05;
-	var dT = 70;		var dTack = 1.0;
+	var dT = 70;        var dTack = 1.0;
 
 	var ImgDir		= "./files/se05/";
 	var Test		= 1;
-	var imageLimit		= 20;
+	var imageLimit	= 20;
 	var tack		= 0;
 	var staticSlideAlpha	= 1.0;
 	var staticSlideVertex	= [2.5, 2.5, -10-z0];
@@ -240,32 +217,34 @@
             }
         }
 //        debugText("ImgDir",ImgDir);
-//		if document.SliceForm.Slice[2].checked==true {
-			debugText("Slice #2 checked?",document.SliceForm.Slice[i].checked);
-//			initExperimentalTexture();
-//		}
-//		else {
-			for(var i=0;i<imageLimit;i++){initTexture(i);}
-//		}
+		for(var i=0;i<imageLimit;i++){initTextureFromImage(i);}
     }
 
 	function initExperimentalTexture() {
 		canvasTexture = gl.createTexture();
-		handleLoadedTexture(canvasTexture, document.getElementById('experimentalCanvas'));
-	}	
+		handleLoadedTexture(canvasTexture, document.getElementById('expCanvas'));
+	}		
 	
 	function initTexture(i) {
-			glassTexture[i] = gl.createTexture();
-			glassTexture[i].image = new Image();
-			glassTexture[i].image.onload = function () {
-				handleLoadedTexture(glassTexture[i])
-			}
-			var ImgNo = i+1;
-			if (i<=9){ImgNo = '0'+ImgNo}
-	//			if
-	//				glassTexture[i].image.src = ImgDir+"MR0000"+ImgNo+".bmp";
-	//			else
-					glassTexture[i].image.src = ImgDir+"im"+ImgNo+".jpg";
+		glassTexture[i] = gl.createTexture();
+		glassTexture[i].image = new Image();
+		glassTexture[i].image.onload = function () {
+			handleLoadedTexture(glassTexture[i])
+		}
+		var ImgNo = i+1;
+		if (i<=9){ImgNo = '0'+ImgNo}
+			glassTexture[i].image.src = ImgDir+"im"+ImgNo+".jpg";
+	}
+
+	function initTextureFromImage(i) {
+		tmpImage		= new Image();
+		var ImgNo = i+1;
+		if (ImgNo<10){ImgNo = '0'+ImgNo}
+//		if (document.SliceForm.Slice[2].checked==true)
+//			tmpImage.src = ImgDir+"MR0000"+ImgNo+".bmp";
+//		else
+			tmpImage.src = ImgDir+"im"+ImgNo+".jpg";
+		glassTexture[i] = createTextureFromImage(tmpImage);
 	}
 
 
@@ -333,15 +312,15 @@
 
 	function changeSpeed(){
 		document.getElementById('speedX').value = xSpeed;
-	    	document.getElementById('speedY').value = ySpeed;
+	    document.getElementById('speedY').value = ySpeed;
 	}
 	function changeAnglesOutput(){
-	    	document.getElementById('angFout').innerHTML = xRot;
-	    	document.getElementById('angTout').innerHTML = yRot;
+	    document.getElementById('angFout').innerHTML = xRot;
+	    document.getElementById('angTout').innerHTML = yRot;
 	}
 	function changeAnglesInput(){
-	    	xRot = parseFloat(document.getElementById('angFin').value);
-	    	yRot = parseFloat(document.getElementById('angTin').value);
+	    xRot = parseFloat(document.getElementById('angFin').value);
+	    yRot = parseFloat(document.getElementById('angTin').value);
 	}
 
     function handleKeys() {
@@ -618,13 +597,48 @@
 		debugText("tack",tack.toPrecision(3));
 	}
 
+	
+	function createTextureFromImage(image) {
+		var texture = gl.createTexture();
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true); //handle
+		
+		gl.bindTexture(gl.TEXTURE_2D, texture);
+		if (!isPowerOfTwo(image.width) || !isPowerOfTwo(image.height)) {
+			// Scale up the texture to the next highest power of two dimensions.
+			var canvas = document.createElement("canvas");
+			canvas.width = nextHighestPowerOfTwo(image.width);
+			canvas.height = nextHighestPowerOfTwo(image.height);
+			var ctx = canvas.getContext("2d");
+			ctx.drawImage(image, 0, 0, image.width, image.height);
+			image = canvas;
+		}
+		gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR); //handle
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST); //handle
+		gl.generateMipmap(gl.TEXTURE_2D);
+		gl.bindTexture(gl.TEXTURE_2D, null);
+		return texture;
+	}
+	 
+	function isPowerOfTwo(x) {
+		return (x & (x - 1)) == 0;
+	}
+	 
+	function nextHighestPowerOfTwo(x) {
+		--x;
+		for (var i = 1; i < 32; i <<= 1) {
+			x = x | x >> i;
+		}
+		return x + 1;
+	}	
 
     function webGLStart() {
         var canvas = document.getElementById("lesson08-canvas");
         initGL(canvas);
         initShaders();
         initBuffers();
-		for(var i=0;i<imageLimit;i++){initTexture(i);}
+		for(var i=0;i<imageLimit;i++){initTextureFromImage(i);}
+//		for(var i=0;i<imageLimit;i++){initTexture(i);}
 
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.enable(gl.DEPTH_TEST);
@@ -666,7 +680,7 @@
 
     <div class="row-fluid">
       <div class="span7">
-        <canvas id="lesson08-canvas" style="border: none;" width="500" height="500">
+        <canvas id="lesson08-canvas" style="border: none;" width="1024" height="1024">
       </div>
       <div class="span5">
 
@@ -691,8 +705,12 @@
         <form name="SliceForm">
           <input type="radio" name="Slice" value="./files/se05/" checked onclick=changeImgDir()> Foot left  1</input>
           <input type="radio" name="Slice" value="./files/se03/"         onclick=changeImgDir()> Foot left  2</input>
-          <input type="radio" name="Slice" value="./files/se04/"         onclick=changeImgDir()> Foot right 1</input>
           <input type="radio" name="Slice" value="./files/07/"           onclick=changeImgDir()> Brain slice 1</input>
+		  </br>
+          <input type="radio" name="Slice" value="./files/se04-R/"       onclick=changeImgDir()> Foot right 1</input>
+          <input type="radio" name="Slice" value="./files/se05-R/"       onclick=changeImgDir()> Foot right 2</input>
+          <input type="radio" name="Slice" value="./files/se06-R/"       onclick=changeImgDir()> Foot right 3</input>
+          <input type="radio" name="Slice" value="./files/se07-R/"       onclick=changeImgDir()> Foot right 4</input>
         </form>
 
         <input type="checkbox" id="blending" checked /> Use blending?<br/>
@@ -716,7 +734,7 @@
 
         <h2>Ambient light:</h2>
         Colour:
-        R: <input type="text" id="ambientR" value="0.9" style="width:50"/>
+        R: <input type="text" id="ambientR" value="1.2" style="width:50"/>
         G: <input type="text" id="ambientG" value="0.8" style="width:50"/>
         B: <input type="text" id="ambientB" value="0.8" style="width:50"/>
 
